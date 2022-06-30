@@ -1,25 +1,25 @@
-def part1():
-    f = open("day1.txt")
-    line = f.readline()
-    count = 0
-    for i in line:
-        if i == "(":
-            count += 1
-        else: 
-            count -= 1
-    print(count)
+def part_one():
+  floor = 0
+  f = open("day1.txt", "r")
+  for i in list(f.readline()):
+    if i == '(': 
+      floor = floor+1
+    else:
+      floor = floor-1
+  print(floor)
 
-def part2():
-    f = open("day1.txt")
-    line = f.readline()
-    count, val = 0, 0
-    for c in line:
-        if c == "(":
-            val += 1
-        else:
-            val -= 1
-        count += 1
-        if val == -1:
-            print(count)
-            break
-part2()
+def part_two():
+  count, floor = 0, 0
+  f = open("day1.txt", "r")
+  for i in list(f.readline()):
+    count = count+1
+    if i == '(': 
+      floor = floor+1
+    else:
+      floor = floor-1
+    if floor == -1:
+      print(count)
+      break
+      
+part_one()
+part_two()
